@@ -1,0 +1,13 @@
+This program wraps a proxy CONNECT request over a normal HTTPS (TCP) request and forwards to a secondary proxy.
+
+The python and C code are identical, the python is just for fun/local testing. Use the C code to run on the router.
+
+To setup on a router. Copy over the tproxyhttps binary (Note this version is compiled for mips/atheros ar71XX)
+and run bin/onrouter.sh from inside the router. (Change port numbers, ip addresses, tproxyhttps binary locations appropriately)
+Note your router config may differ, use this only as a guide.
+
+
+To compile from scratch use openwrt's ar71XX toolchain and compile as:
+$ mips-openwrt-linux-gcc tproxyhttps.c -ldl  -lpthread -o tproxyhttps
+Toolchain available at https://downloads.openwrt.org/snapshots/trunk/ar71xx/OpenWrt-Toolchain-ar71xx-for-mips_34kc-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
+If your router does not use the atheros chipset or is not compatible with this mips version, use the appropriate toolchain for your architecture

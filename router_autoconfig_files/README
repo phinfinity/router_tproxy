@@ -1,0 +1,6 @@
+These are the files typically required for auto-configured startup on a router. Refer startupscript.sh for instructions.
+
+Note binaries for tinyproxy.ipk not included. This was tested with tinyproxy_1.8.2-5_ar71xx.ipk (md5 99b4762a202abbe46a113ab9067cc6e7)
+Newer version available at : https://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/packages/tinyproxy_1.8.3-2_ar71xx.ipk
+
+Source for tproxyhttps , is available under "transparent_https"
