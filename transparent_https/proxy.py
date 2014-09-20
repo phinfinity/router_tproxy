@@ -4,10 +4,7 @@
 Simple hacked up https transparent proxy
 works on desktops/laptops running linux
 Add iptables rules (in order):
-iptables -t nat -A OUTPUT -d 192.168.0.0/16 -j ACCEPT
-iptables -t nat -A OUTPUT -d 10.0.0.0/8 -j ACCEPT
-iptables -t nat -A OUTPUT -d 172.16.0.0/12 -j ACCEPT
-iptables -t nat -A OUTPUT -d 127.0.0.1 -j ACCEPT
+iptables -t nat -A OUTPUT -d 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,127.0.0.1 -j ACCEPT
 iptables -t nat -A OUTPUT -p tcp --dport 443 -j DNAT --to 127.0.0.1:1234
 """
 import logging
