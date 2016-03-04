@@ -48,7 +48,7 @@ def wrap_https_proxy(proxy_s, s, dest_host, dest_port):
     https_conn = https_conn.format(host=dest_host, port=dest_port)
     proxy_s.send(https_conn)
     data = proxy_s.recv(1024)
-    if not data.startswith("HTTP/1.0 200"):
+    if not data.startswith("HTTP/1.1 200"):
         logger.info("Wrapped connection failed")
         logger.info("Got : %s", data.split('\n')[0])
         proxy_s.close()
